@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5; /* WhatsApp light background */
+            color: #075e54; /* WhatsApp dark green */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #075e54; /* WhatsApp dark green */
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #075e54; /* WhatsApp dark green */
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #128c7e; /* WhatsApp lighter green */
+        }
+    </style>
+</head>
+<body>
+    <%- include('navbar') %>
+    <h1>Article Management</h1>
+    <a href="/Articles/articleForm">Add Articles</a>
+    <a href="/Articles/myArticles">My Articles</a>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Theme Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e5ddd5; 
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            background-color: #075e54; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navbar links */
+        ul a {
+            text-decoration: none;
+            color: #ffffff; /* White text color */
+            padding: 15px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover effect on links */
+        ul a:hover {
+            background-color: #128c7e; /* WhatsApp lighter green */
+        }
+
+        /* Navbar left side */
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navbar right side */
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* User welcome message */
+        .navbar-right span {
+            color: #ffffff; /* White text color */
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-left, .navbar-right {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            ul a {
+                width: 100%;
+                text-align: left;
+                padding: 10px 15px;
+            }
+
+            .navbar-right span {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <div class="navbar-left">
+            <a href="/">Home</a>
+            <a href="/Articles/articlelist">All Articles</a>
+        </div>
+        <div class="navbar-right">
+            <% if (!user) { %>
+                <a href="/User/register">Register</a>
+                <a href="/User/login">Login</a>
+            <% } else { %>
+                <span>Welcome, <%= user.username %>!</span>
+                <a href="/User/logout">Logout</a>
+            <% } %>
+        </div>
+    </ul>
+</body>
+</html>

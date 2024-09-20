@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5; /* WhatsApp light background */
+            color: #075e54; /* WhatsApp dark green */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px; /* Maximum width for the content */
+            margin: 20px auto; /* Center the container and add vertical spacing */
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+        }
+
+        h1 {
+            color: #075e54; /* WhatsApp dark green */
+            margin-bottom: 20px;
+            font-size: 24px; /* Slightly larger font size for headings */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+            gap: 20px; /* Space between items */
+        }
+
+        li {
+            background-color: #ffffff; /* White background for each article */
+            border: 1px solid #dcdcdc; /* Light gray border */
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for article items */
+            flex: 1 1 calc(50% - 20px); /* Adjust to show two items per row, minus gap */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            word-break: break-word; /* Break long words to prevent overflow */
+        }
+
+        h2 {
+            color: #075e54; /* WhatsApp dark green */
+            margin-top: 0;
+            font-size: 20px; /* Slightly larger font size for article titles */
+        }
+
+        p {
+            color: #333333; /* Darker text for readability */
+            margin-bottom: 0;
+        }
+
+        .no-articles {
+            font-size: 16px;
+            color: #333333; /* Darker text for readability */
+            text-align: center; /* Center the message */
+        }
+    </style>
+</head>
+<body>
+    <%- include('second') %> <!-- Ensure 'second' partial is included correctly -->
+
+    <div class="container">
+        <h1>My Articles</h1>
+        <% if (articles && articles.length > 0) { %>
+            <ul>
+                <% articles.forEach(article => { %>
+                    <li>
+                        <h2><%= article.title %></h2>
+                        <p><%= article.content %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p class="no-articles">You have not written any articles yet.</p>
+        <% } %>
+    </div>
+</body>
+</html>

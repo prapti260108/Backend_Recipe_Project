@@ -53,7 +53,7 @@ const articleListfile = async(req,res)=>{
     res.render('articleList', { user: req.user });
 }
 const secondfile = async(req,res)=>{
-    res.render('second', { user: req.user });
+    res.render('Second', { user: req.user });
 }
 
 const MyarticlesFile = async (req, res) => {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5; /* WhatsApp light background */
+            color: #075e54; /* WhatsApp dark green */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #128c7e; /* WhatsApp lighter green */
+        }
+
+        .recipe-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .recipe-content {
+            margin-bottom: 20px;
+        }
+
+        .recipe-actions {
+            margin-top: 10px;
+        }
+
+        .recipe-actions a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #075e54; 
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .recipe-actions a:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+<body>
+    <%- include("navbar") %>
+    <h1>Recipes</h1>
+
+    <% recipedata.forEach((el, i) => { %>
+        <div class="recipe-container">
+            <h2><%= el.title %></h2>
+            <p class="recipe-content"><%= el.content %></p>
+            <div class="recipe-actions">
+                <% if (user && user.role === 'admin') { %>
+                    <a href="/recipe/edit/<%= el._id %>">Edit</a> <!-- Edit Button -->
+                    <a href="/recipes/delete/<%= el._id %>" onclick="return confirm('Are you sure you want to delete this recipe?');">Delete</a>
+                <% } %>
+            </div>
+        </div>
+    <% }) %>
+</body>
+</html>

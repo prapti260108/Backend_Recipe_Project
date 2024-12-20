@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- editRecipeForm.ejs -->
+<h1>Edit Recipe</h1>
+<!-- editRecipeForm.ejs -->
+<form action="/recipes/edit/<%= recipe._id %>" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" value="<%= recipe.title %>" required><br>
+
+    <label for="steps">Steps:</label>
+    <textarea name="steps" required><%= recipe.steps %></textarea><br>
+
+    <label for="ingredients">Ingredients:</label>
+    <textarea name="ingredients" required><%= recipe.ingredients %></textarea><br>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+
+
+</body>
+</html>

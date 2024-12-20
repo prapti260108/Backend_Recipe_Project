@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5ddd5; /* WhatsApp light background */
+            color: #075e54; /* WhatsApp dark green */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #128c7e; /* WhatsApp lighter green */
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], 
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        button {
+            background-color: #075e54; /* WhatsApp dark green */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #128c7e; /* WhatsApp lighter green */
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <%- include('Second') %>
+    <form action="/recipes/add" method="post">
+        <h2>Add a Recipe</h2>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="steps">Steps:</label>
+        <textarea id="steps" name="steps" rows="4" required></textarea>
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" rows="4" required></textarea>
+        <button type="submit">Add Recipe</button>
+    </form>
+    
+</body>
+</html>

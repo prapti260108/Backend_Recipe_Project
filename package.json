@@ -1,22 +1,22 @@
 {
-  "name": "finalnode",
+  "name": "recipenodeexam-2222",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start":"nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.6.0",
-    "nodemon": "^3.1.4"
+    "mongoose": "^8.9.0",
+    "nodemon": "^3.1.9"
   }
 }
